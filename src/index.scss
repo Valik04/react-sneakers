@@ -17,12 +17,13 @@ body {
   background-color: #E7F6FF;
 }
 
+
+
 .wrapper{
   max-width: 1080px;
-  height: 1526px;
   background-color: white;
   border-radius: 20px;
-  margin: 85px auto;
+  margin: 50px auto;
   box-shadow: 0 10px 20px rgba(0,0,0,0.04);
 }
 
@@ -72,6 +73,35 @@ header{
 .content{
   padding: 40px;
 
+  .search-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+
+    .search{
+      border: 1px solid #f3f3f3;
+      height: 45px;
+      width: 250px;
+      border-radius: 10px;
+      padding: 0 15px;
+
+
+
+      input{
+        border: 0;
+        padding: 13px;
+        font-size: 16px;
+        outline: none;
+        width: 200px;
+      }
+
+    }
+  }
+
+
+
   .sneakers{
     display: flex;
   }
@@ -85,18 +115,29 @@ header{
 
   .card{
     border: 1px solid #F3F3F3;
-    height: 260px;
-    width: 210px;
+
+    width: 220px;
     border-radius: 40px;
     padding: 30px;
-    margin-right: 70px;
+    margin-right: 75px;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+      box-shadow: 0 14px 30px rgba(0,0,0,0.05);
+      transform: translateY(-5px);
+         }
+
+    .favorite{
+      position: absolute;
+      cursor: pointer;
+    }
 
     b{
       font-size: 14px;
     }
 
     h5{
-      padding-top: 20px;
       font-weight: 400;
       font-size: 14px;
     }
@@ -128,10 +169,6 @@ header{
     }
   }
 
-
-  h1{
-    margin-bottom: 40px;
-  }
 }
 
 

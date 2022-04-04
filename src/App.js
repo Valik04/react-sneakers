@@ -24,10 +24,22 @@ function App() {
       </header>
 
       <div className='content'>
-        <h1>Все кроссовки</h1>
+
+        <div className='search-block'>
+          <h1>Все кроссовки</h1>
+          <div className='search'>
+            <img src='/img/search.svg' alt='Search'/>
+            <input placeholder='Поиск...'/>
+          </div>
+        </div>
 
         <div className='sneakers'>
         <div className="card">
+
+          <div className='favorite'>
+          <img src='/img/heart-unliked.svg' alt='Unliked'/>
+        </div>
+
           <img className='images'  src='/img/sneakers/image 1.jpg' alt='Sneaker'/>
           <h5> Мужские Кроссовки Nike Blazer Mid Suede</h5>
           <div className='cardBottom'>
