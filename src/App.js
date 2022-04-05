@@ -2,8 +2,6 @@
 function App() {
   return (
     <div className="wrapper">
-
-
       <div className="overlay">
         <div className='drawer'>
           <h2>Корзина</h2>
@@ -25,6 +23,23 @@ function App() {
             </div>
             <img className='removeBtn' width={32} height={32} src='/img/btn-remove.svg' alt='Remove'/>
           </div>
+
+
+          <div className="items">
+            <ul className= 'cartTotalBlock'>
+              <li>
+                <span>Итого: </span>
+                <diV> </diV>
+                <b>21 498 руб. </b>
+              </li>
+              <li>
+                <span>Налог 5%: </span>
+                <diV> </diV>
+                <b>1074 руб. </b>
+              </li>
+            </ul>
+          </div>
+
 
         </div>
       </div>

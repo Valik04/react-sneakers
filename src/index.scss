@@ -114,8 +114,9 @@ header{
   }
 
   .card{
-    border: 1px solid #F3F3F3;
 
+    border: 1px solid #F3F3F3;
+    height: 260px;
     width: 220px;
     border-radius: 40px;
     padding: 30px;
@@ -147,6 +148,7 @@ header{
     display: flex;
     justify-content: space-between;
 
+
     button{
       background: #ffffff;
       border: 1px solid #f2f2f2;
@@ -160,6 +162,7 @@ header{
   .cardInfo{
     display: flex;
     flex-direction: column;
+
 
     span{
       color: #BDBDBD;
@@ -190,6 +193,9 @@ header{
   box-shadow: -10px 4px 24px rgba(0,0,0,0.1);
   padding: 30px;
 
+
+
+
   h2{
     margin: 0;
     font-size: 24px;
@@ -204,6 +210,11 @@ header{
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 20px;
+
+
+  .cardInfo{
+    margin: 30px;
+  }
 
 
   p{
@@ -230,8 +241,25 @@ header{
   }
 }
 
-.cardInfo{
-  margin: 20px;
+
+.items{
+
+  .cartTotalBlock{
+    div{
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed #DFDFDF;
+      position: relative;
+      top: -4px;
+      margin: 0 10px;
+    }
+
+    li{
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 
