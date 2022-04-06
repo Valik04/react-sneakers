@@ -4,7 +4,7 @@ function App() {
     <div className="wrapper">
       <div className="overlay">
         <div className='drawer'>
-          <h2>Корзина</h2>
+          <h2>Корзина <img className='removeBtn' width={32} height={32} src='/img/btn-remove.svg' alt='Remove'/></h2>
 
           <div className="cartItem">
             <img width={70} height={70} src='/img/sneakers/image 1.jpg' alt='Sneakers'/>
@@ -24,26 +24,25 @@ function App() {
             <img className='removeBtn' width={32} height={32} src='/img/btn-remove.svg' alt='Remove'/>
           </div>
 
-
           <div className="items">
             <ul className= 'cartTotalBlock'>
               <li>
                 <span>Итого: </span>
-                <diV> </diV>
+                <div> </div>
                 <b>21 498 руб. </b>
               </li>
               <li>
                 <span>Налог 5%: </span>
-                <diV> </diV>
+                <div> </div>
                 <b>1074 руб. </b>
               </li>
             </ul>
+            <button className='greenButton'>Оформить заказ<img src='/img/arrow.svg' alt='Arrow'/></button>
           </div>
-
-
         </div>
-      </div>
 
+
+      </div>
       <header>
         <div className='headerLeft'>
           <img width={40} height={40} src='/img/logo.png'/>

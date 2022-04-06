@@ -12,8 +12,6 @@ ol[class] {
 body {
   margin: 0;
   font-family:'Inter', system-ui;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: #E7F6FF;
 }
 
@@ -186,21 +184,95 @@ header{
 
 .drawer{
   right: 0;
-  height: 100%;
+  height: 890px;
   position: absolute;
   width: 420px;
   background: white;
   box-shadow: -10px 4px 24px rgba(0,0,0,0.1);
   padding: 30px;
 
-
-
-
   h2{
     margin: 0;
     font-size: 24px;
     padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    img{
+      cursor: pointer;
+    }
   }
+
+
+
+  .items{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 20px;
+    padding-left: 15px;
+    overflow: auto;
+
+    .greenButton{
+      width: 420px;
+      height: 55px;
+      border-radius: 18px;
+      background: #9DD558;
+      color: white;
+      border: 0;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.1s ease-in-out;
+
+
+      &:hover{
+        background: lighten(#9DD558, 7%);
+      }
+
+      &:active{
+        background: darken(#9DD558,5%);
+      }
+    }
+
+    .cartTotalBlock{
+
+      div{
+        flex: 1;
+        height: 1px;
+        border-bottom: 1px dashed #DFDFDF;
+        position: relative;
+        top: -4px;
+        margin: 0 10px;
+      }
+
+      li{
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 20px;
+      }
+    }
+
+    .greenButton{
+      position: relative;
+
+      &:hover{
+        img{
+          transform: translateX(5px);
+        }
+      }
+
+      img{
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        transition: transform 0.15s ease-in-out;
+
+      }
+    }
+  }
+
 }
 
 .cartItem{
@@ -242,25 +314,7 @@ header{
 }
 
 
-.items{
 
-  .cartTotalBlock{
-    div{
-      flex: 1;
-      height: 1px;
-      border-bottom: 1px dashed #DFDFDF;
-      position: relative;
-      top: -4px;
-      margin: 0 10px;
-    }
-
-    li{
-      display: flex;
-      align-items: flex-end;
-      margin-bottom: 20px;
-    }
-  }
-}
 
 
 
