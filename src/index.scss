@@ -23,6 +23,7 @@ body {
   border-radius: 20px;
   margin: 50px auto;
   box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+
 }
 
 header{
@@ -112,13 +113,12 @@ header{
   }
 
   .card{
-
-    border: 1px solid #F3F3F3;
-    height: 260px;
-    width: 220px;
+    height: 218px;
+    width: 168px;
     border-radius: 40px;
-    padding: 30px;
-    margin-right: 75px;
+    padding: 20px;
+    border: 1px solid #F3F3F3;
+    margin-right: 40px;
     transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
     &:hover{
@@ -212,7 +212,6 @@ header{
     right: 0;
     margin: 20px;
     padding-left: 15px;
-    overflow: auto;
 
     .greenButton{
       width: 420px;
@@ -282,6 +281,7 @@ header{
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 20px;
+
 
 
   .cardInfo{
