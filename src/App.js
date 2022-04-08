@@ -2,6 +2,13 @@ import Card from "./componets/Card";
 import Header from "./componets/Header";
 import Drawer from "./componets/Drawer";
 
+const arr =[
+    {name: 'Мужские Кроссовки Nike Blazer Mid Suede' , price:'12 999'},
+    {name: 'Мужские Кроссовки Nike Air Max 270' , price:'15 600'},
+];
+
+
+
 function App() {
   return (
     <div className="wrapper">
@@ -19,8 +26,12 @@ function App() {
         </div>
 
         <div className='sneakers'>
-          <Card/>
-      </div>
+            <Card/>
+            <Card/>
+            {/*{arr.map((obj) => (*/}
+            {/*    <Card/>*/}
+            {/*))}*/}
+        </div>
 
       </div>
     </div>
