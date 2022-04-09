@@ -112,62 +112,7 @@ header{
     margin: 0 auto;
   }
 
-  .card{
-    height: 218px;
-    width: 168px;
-    border-radius: 40px;
-    padding: 20px;
-    border: 1px solid #F3F3F3;
-    margin-right: 40px;
-    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
-    &:hover{
-      box-shadow: 0 14px 35px rgba(0,0,0,0.06);
-      transform: translateY(-5px);
-         }
-
-    .favorite{
-      position: absolute;
-      cursor: pointer;
-    }
-
-    b{
-      font-size: 14px;
-    }
-
-    h5{
-      font-weight: 400;
-      font-size: 14px;
-    }
-  }
-
-
-  .cardBottom{
-    display: flex;
-    justify-content: space-between;
-
-
-    button{
-      background: #ffffff;
-      border: 1px solid #f2f2f2;
-      box-sizing: border-box;
-      height: 32px;
-      width: 32px;
-      cursor: pointer;
-    }
-  }
-
-  .cardInfo{
-    display: flex;
-    flex-direction: column;
-
-
-    span{
-      color: #BDBDBD;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-  }
 
 }
 
