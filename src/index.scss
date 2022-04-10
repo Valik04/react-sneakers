@@ -38,10 +38,12 @@ header{
 
     li{
       margin-right: 30px;
+      cursor: pointer;
     }
 
     img{
       margin-right: 16px;
+
     }
   }
 
@@ -103,6 +105,7 @@ header{
 
   .sneakers{
     display: flex;
+    flex-wrap: wrap;
   }
 
   .images{
@@ -125,7 +128,7 @@ header{
   height: 100%;
   background-color: rgba(0,0,0,0.1);
   z-index: 1;
-}
+
 
 .drawer{
   right: 0;
@@ -135,6 +138,8 @@ header{
   background: white;
   box-shadow: -10px 4px 24px rgba(0,0,0,0.1);
   padding: 30px;
+  display: flex;
+  flex-direction: column;
 
   h2{
     margin: 0;
@@ -148,40 +153,47 @@ header{
     }
   }
 
-
-
   .items{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 20px;
-    padding-left: 15px;
+    flex: 1;
 
-    .greenButton{
-      width: 420px;
-      height: 55px;
-      border-radius: 18px;
-      background: #9DD558;
-      color: white;
-      border: 0;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background 0.1s ease-in-out;
+    .cartItem{
+      display: flex;
+      align-items: center;
+      border: 1px solid #F3F3F3;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 20px;
+
+      .cardInfo{
+        margin: 30px;
+
+        p{
+          margin-bottom: 5px;
+          font-size: 16px;
+        }
+
+        b{
+          font-size: 14px;
+        }
 
 
-      &:hover{
-        background: lighten(#9DD558, 7%);
+      }
+      img{
+        padding: 10px;
+      }
+      .removeBtn{
+        opacity: 0.5;
+        cursor: pointer;
+        transition: opacity 0.15s ease-in-out;
+
+        &:hover{
+          opacity: 1;
+        }
       }
 
-      &:active{
-        background: darken(#9DD558,5%);
-      }
     }
-
+  }
     .cartTotalBlock{
-
       div{
         flex: 1;
         height: 1px;
@@ -198,70 +210,48 @@ header{
       }
     }
 
-    .greenButton{
-      position: relative;
+      .greenButton{
+        width: 420px;
+        height: 55px;
+        border-radius: 18px;
+        background: #9DD558;
+        color: white;
+        border: 0;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background 0.1s ease-in-out;
+        position: relative;
 
-      &:hover{
-        img{
-          transform: translateX(5px);
+
+        &:hover{
+          background: lighten(#9DD558, 7%);
         }
-      }
 
-      img{
-        position: absolute;
-        right: 30px;
-        top: 20px;
-        transition: transform 0.15s ease-in-out;
+        &:active{
+          background: darken(#9DD558,5%);
+        }
 
-      }
+
+        &:hover{
+          img{
+            transform: translateX(5px);
+          }
+        }
+
+        img{
+          position: absolute;
+          right: 30px;
+          top: 20px;
+          transition: transform 0.15s ease-in-out;
+
+        }
     }
-  }
-
-}
-
-.cartItem{
-  display: flex;
-  align-items: center;
-  border: 1px solid #F3F3F3;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 20px;
 
 
 
-  .cardInfo{
-    margin: 30px;
-  }
-
-
-  p{
-    margin-bottom: 5px;
-    font-size: 16px;
-  }
-
-  b{
-    font-size: 14px;
-  }
-
-  img{
-    padding: 10px;
-  }
-
-  .removeBtn{
-    opacity: 0.5;
-    cursor: pointer;
-    transition: opacity 0.15s ease-in-out;
-
-    &:hover{
-      opacity: 1;
-    }
   }
 }
-
-
-
-
-
 
 
 

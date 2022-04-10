@@ -6,6 +6,7 @@
   border: 1px solid #F3F3F3;
   margin-right: 40px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  margin-bottom: 30px;
 
   &:hover{
     box-shadow: 0 14px 35px rgba(0,0,0,0.06);
@@ -29,13 +30,7 @@
     display: flex;
     justify-content: space-between;
 
-
-    button{
-      background: #ffffff;
-      border: 1px solid #f2f2f2;
-      box-sizing: border-box;
-      height: 32px;
-      width: 32px;
+    img{
       cursor: pointer;
     }
   }

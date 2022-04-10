@@ -1,22 +1,32 @@
-import Index from "./componets/Card/Card";
+import React from "react";
 import Header from "./componets/Header";
 import Drawer from "./componets/Drawer";
 import Card from "./componets/Card/Card";
 
-const arr =[
-    {title: 'Мужские Кроссовки Nike Blazer Mid Suede' , price:'12 999',imageUrl:'/img/sneakers/image 1.jpg'},
-    {title: 'Мужские Кроссовки Nike Air Max 270' , price:'15 600',imageUrl:'/img/sneakers/image 2.jpg'},
-    {title: 'Мужские Кроссовки Nike Blazer Mid Suede' , price:'8 499 руб.',imageUrl:'/img/sneakers/image 3.jpg'},
-    {title: 'Кроссовки Puma X Aka Boku Future Rider' , price:'8 999 руб.',imageUrl:'/img/sneakers/image 4.jpg'},
-];
-
-
 function App() {
+    const [items, setItems] = React.useState([]);
+    const [cartItems, setCartItems] = React.useState([]);
+    const [cartOpened, setCartOpened] = React.useState(false);
+
+    React.useEffect(() => {
+        fetch('https://6252bb3169af39728b529340.mockapi.io/items')
+            .then((res) => {
+                return res.json();
+            })
+            .then((json) => {
+                setItems(json);
+            });
+    }, []);
+
+    const onAddToCart = (obj) => {
+        setCartItems(prev =>[...prev, obj]);
+    };
+
   return (
     <div className="wrapper">
 
-      <Drawer/>
-      <Header/>
+        {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} />}
+      <Header onClickCart={() => setCartOpened(true)} />
       <div className='content'>
         <div className='search-block'>
           <h1>Все кроссовки</h1>
@@ -28,14 +38,13 @@ function App() {
 
         <div className='sneakers'>
 
-            {arr.map((obj) => (
+            {items.map((item) => (
                 <Card
-                    title={obj.title}
-                    price={obj.price}
-                    imageUrl={obj.imageUrl}
+                    title={item.title}
+                    price={item.price}
+                    imageUrl={item.imageUrl}
                     onFavorite={() => console.log('Добавили в закладки')}
-                    onPlus={() => console.log('Нажали плюс')
-                    }
+                    onPlus={(obj) => onAddToCart(obj)}
                 />
             ))}
         </div>

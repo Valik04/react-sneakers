@@ -1,31 +1,27 @@
 import React from "react";
 
-function Drawer(){
+function Drawer({onClose, items =[] }){
     return(
-        <div style={{display:'none'}} className="overlay">
+        <div className="overlay">
 
         <div className='drawer'>
-            <h2>Корзина <img className='removeBtn' width={32} height={32} src='/img/btn-remove.svg' alt='Remove'/></h2>
-
-            <div className="cartItem">
-                <img width={70} height={70} src='/img/sneakers/image 1.jpg' alt='Sneakers'/>
-                <div className='cardInfo'>
-                    <p>Мужские Кроссовки Nike Air Max 270</p>
-                    <b>12 999 руб.</b>
-                </div>
-                <img className='removeBtn' width={32} height={32} src='/img/btn-remove.svg' alt='Remove'/>
-            </div>
-
-            <div className="cartItem">
-                <img width={70} height={70} src='/img/sneakers/image 2.jpg' alt='Sneakers'/>
-                <div className='cardInfo'>
-                    <p>Мужские Кроссовки Nike Air Max 270</p>
-                    <b>12 999 руб.</b>
-                </div>
-                <img className='removeBtn' width={32} height={32} src='/img/btn-remove.svg' alt='Remove'/>
-            </div>
+            <h2>Корзина <img onClick={onClose} className='removeBtn' width={32} height={32} src='/img/btn-remove.svg' alt='Remove'/></h2>
 
             <div className="items">
+                {items.map((obj) =>(
+                    <div className="cartItem">
+                        <img width={70} height={70} src={obj.imageUrl} alt='Sneakers'/>
+                        <div className='cardInfo'>
+                            <p>{obj.title}</p>
+                            <b>{obj.price} руб.</b>
+                        </div>
+                        <img className='removeBtn' width={32} height={32} src='/img/btn-remove.svg' alt='Remove'/>
+                    </div>
+                ))}
+            </div>
+
+
+
                 <div className= 'cartTotalBlock'>
                     <li>
                         <span>Итого: </span>
@@ -39,7 +35,7 @@ function Drawer(){
                     </li>
                 </div>
                 <button className='greenButton'>Оформить заказ<img src='/img/arrow.svg' alt='Arrow'/></button>
-            </div>
+
         </div>
     </div>
     )
