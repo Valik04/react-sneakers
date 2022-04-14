@@ -1,7 +1,35 @@
 import Card from "../componets/Card/Card";
 import React from "react";
+import AppContext from "../componets/context";
 
-function Home({items,setSearchValue,searchValue,onChangeSearchInput,onAddToCart,onAddToFavorite,}) {
+function Home({
+                  items,
+                  cartItems,
+                  setSearchValue,
+                  searchValue,
+                  onChangeSearchInput,
+                  onAddToCart,
+                  onAddToFavorite,
+                  isLoading,
+}) {
+
+    const {isItemAdded} = React.useContext(AppContext);
+
+   const renderItems = () =>{
+const filtredItems =  items.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()),);
+
+       return (isLoading ? [...Array(12)] : filtredItems).map((item, index) => (
+               <Card
+                   key={index}
+                   onFavorite={(obj) => onAddToFavorite(obj)}
+                   onPlus={(obj) => onAddToCart(obj)}
+                   added={isItemAdded(item && item.id)}
+                   loading={isLoading}
+                   {...item}
+               />
+           ));
+   };
+
     return(
         <div className='content'>
             <div className='search-block'>
@@ -15,16 +43,7 @@ function Home({items,setSearchValue,searchValue,onChangeSearchInput,onAddToCart,
 
             <div className='sneakers'>
 
-                {items
-                    .filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
-                    .map((item, index) => (
-                        <Card
-                            key={index}
-                            {...item}
-                            onFavorite={(obj) => onAddToFavorite(obj)}
-                            onPlus={(obj) => onAddToCart(obj)}
-                        />
-                    ))}
+                {renderItems()}
             </div>
 
         </div>
