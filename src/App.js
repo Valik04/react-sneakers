@@ -66,14 +66,14 @@ function App() {
     };
 
     const isItemAdded = (id) => {
-        return cartItems.some((obj) => Number(obj.id) === Number(id))
-    }
+        return cartItems.some((obj) => Number(obj.id) === Number(id));
+    };
 
   return (
-      <AppContext.Provider value={{items,cartItems,favorites, isItemAdded}}>
+      <AppContext.Provider value={{items,cartItems,favorites, isItemAdded,onAddToFavorite}}>
     <div className="wrapper">
 
-        {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} />}
+        {cartOpened && (<Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} />)}
       <Header onClickCart={() => setCartOpened(true)} />
 
         <Routes>
@@ -95,7 +95,7 @@ function App() {
         <Routes>
             <Route exact path='/favorites'
                  element={
-                     <Favorites items={favorites} onAddToFavorite={onAddToFavorite}/>
+                     <Favorites/>
                  }
             />
         </Routes>
