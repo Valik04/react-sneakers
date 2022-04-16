@@ -21,7 +21,6 @@ body {
 }
 
 
-
 .wrapper{
   max-width: 1080px;
   background-color: white;
@@ -145,101 +144,105 @@ header{
   z-index: 1;
 
 
-.drawer{
-  right: 0;
-  height: 890px;
-  position: absolute;
-  width: 420px;
-  background: white;
-  box-shadow: -10px 4px 24px rgba(0,0,0,0.1);
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
 
-  .cartEmpty{
+  .drawer{
+    right: 0;
+    height: 890px;
+    position: absolute;
+    width: 420px;
+    background: white;
+    box-shadow: -10px 4px 24px rgba(0,0,0,0.1);
+    padding: 30px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    text-align: center;
-    flex: 1;
 
-    .greenButton{
-      margin-top: 20px;
-
-      &:hover{
-        img{
-          transform: rotate(180deg) translateX(3px);
-        }
-      }
-    }
-
-    .Empty{
-      margin-bottom: 20px;
-      width: 120px;
-      height: 120px;
-    }
-
-    p{
-      opacity: 0.6;
-      width: 280px;
-      line-height: 24px;
-    }
-  }
-
-  h2{
-    margin: 0;
-    font-size: 24px;
-    padding-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-
-    img{
-      cursor: pointer;
-    }
-  }
-
-  .items{
-    flex: 1;
-
-
-    .cartItem{
+    .cartEmpty{
       display: flex;
       align-items: center;
-      border: 1px solid #F3F3F3;
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 20px;
-
-      .cardInfo{
-        margin: 30px;
-
-        p{
-          margin-bottom: 5px;
-          font-size: 16px;
-        }
-
-        b{
-          font-size: 14px;
-        }
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      flex: 1;
 
 
-      }
-      img{
-        padding: 10px;
-      }
-      .removeBtn{
-        opacity: 0.5;
-        cursor: pointer;
-        transition: opacity 0.15s ease-in-out;
+
+
+      .greenButton{
+        margin-top: 20px;
 
         &:hover{
-          opacity: 1;
+          img{
+            transform: rotate(180deg) translateX(3px);
+          }
         }
       }
 
+      .Empty{
+        margin-bottom: 20px;
+        width: 120px;
+      }
+
+      p{
+        opacity: 0.6;
+        width: 280px;
+        line-height: 24px;
+      }
     }
-  }
+
+    h2{
+      margin: 0;
+      font-size: 24px;
+      padding-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      img{
+        cursor: pointer;
+      }
+    }
+
+    .items{
+      flex: 1;
+
+
+
+      .cartItem{
+        display: flex;
+        align-items: center;
+        border: 1px solid #F3F3F3;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        .cardInfo{
+          margin: 30px;
+
+          p{
+            margin-bottom: 5px;
+            font-size: 16px;
+          }
+
+          b{
+            font-size: 14px;
+          }
+
+
+        }
+        img{
+          padding: 10px;
+        }
+        .removeBtn{
+          opacity: 0.5;
+          cursor: pointer;
+          transition: opacity 0.15s ease-in-out;
+
+          &:hover{
+            opacity: 1;
+          }
+        }
+
+      }
+    }
     .cartTotalBlock{
       position: absolute;
       bottom: 0;
@@ -260,42 +263,47 @@ header{
       }
     }
 
-      .greenButton{
-        width: 420px;
-        height: 55px;
-        border-radius: 18px;
-        background: #9DD558;
-        color: white;
-        border: 0;
-        font-size: 16px;
-        cursor: pointer;
-        margin-top: 20px;
-        transition: background 0.1s ease-in-out;
-        position: relative;
+    .greenButton{
+      width: 420px;
+      height: 55px;
+      border-radius: 18px;
+      background: #9DD558;
+      color: white;
+      border: 0;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.1s ease-in-out;
+      position: relative;
+
+      &:disabled{
+        background-color: #bebebe;
+        cursor: default ;
+      }
 
 
-        &:hover{
-          background: lighten(#9DD558, 7%);
-        }
+      &:hover{
+        background: lighten(#9DD558, 7%);
+      }
 
-        &:active{
-          background: darken(#9DD558,5%);
-        }
+      &:active{
+        background: darken(#9DD558,5%);
+      }
 
 
-        &:hover{
-          img{
-            transform: translateX(5px);
-          }
-        }
-
+      &:hover{
         img{
-          position: absolute;
-          right: 30px;
-          top: 20px;
-          transition: transform 0.15s ease-in-out;
-
+          transform: translateX(5px);
         }
+      }
+
+      img{
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        transition: transform 0.15s ease-in-out;
+
+      }
     }
 
 

@@ -1,11 +1,12 @@
 import React from "react";
+import {Route, Routes} from "react-router-dom";
 import axios from "axios";
 import Header from "./componets/Header";
-import Drawer from "./componets/Drawer";
-import {Route, Routes} from "react-router-dom";
+import Drawer from "./componets/Drawer/Drawer";
+import AppContext from "./componets/context";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
-import AppContext from "./componets/context";
+import Orders from "./pages/Orders";
 
 
 function App() {
@@ -52,12 +53,13 @@ function App() {
         try{
         if (favorites.find((favObj) => favObj.id === obj.id)){
             axios.delete(`https://6252bb3169af39728b529340.mockapi.io/favorites/${obj.id}`);
+            setFavorites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
         }else {
             const {data} = await axios.post('https://6252bb3169af39728b529340.mockapi.io/favorites', obj)
             setFavorites((prev) =>[...prev, data]);
         }
         }catch (error){
-            alert('Неудалось добавить')
+            // xxxx
         }
     };
 
@@ -70,10 +72,12 @@ function App() {
     };
 
   return (
-      <AppContext.Provider value={{items,cartItems,favorites, isItemAdded,onAddToFavorite}}>
+      <AppContext.Provider value={{items,cartItems,favorites, isItemAdded,onAddToFavorite,setCartOpened,setCartItems,onAddToCart}}>
     <div className="wrapper">
 
-        {cartOpened && (<Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} />)}
+        {cartOpened && (
+        <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem}/>
+        )}
       <Header onClickCart={() => setCartOpened(true)} />
 
         <Routes>
@@ -97,6 +101,14 @@ function App() {
                  element={
                      <Favorites/>
                  }
+            />
+        </Routes>
+
+        <Routes>
+            <Route exact path='/orders'
+                   element={
+                       <Orders/>
+                   }
             />
         </Routes>
     </div>

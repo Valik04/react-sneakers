@@ -45,10 +45,10 @@ function Card({
             </ContentLoader>
             ):(
                <>
-                   <div className={styles.favorite} onClick={onFavorite}>
+                   {onFavorite && (<div className={styles.favorite} onClick={onFavorite}>
                        <img onClick={onClickFavorite} src={isFavorite ? '/img/liked.svg' : '/img/unliked.svg'}
                             alt='Unliked'/>
-                   </div>
+                   </div>)}
                    <img className='images' src={imageUrl} alt='Sneaker'/>
                    <h5>{title}</h5>
                    <div className={styles.cardBottom}>
@@ -56,8 +56,8 @@ function Card({
                            <span>Цена:</span>
                            <b>{price} руб.</b>
                        </div>
-                       <img onClick={onClickPlus} src={isItemAdded(id) ? '/img/btn-checked.svg' : '/img/btn-plus.svg'}
-                            alt='Plus'/>
+                       {onPlus && (<img onClick={onClickPlus} src={isItemAdded(id) ? '/img/btn-checked.svg' : '/img/btn-plus.svg'}
+                            alt='Plus'/>)}
                    </div>
                </>
             )}
