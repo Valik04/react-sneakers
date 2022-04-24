@@ -59,7 +59,7 @@ function App() {
             setFavorites((prev) =>[...prev, data]);
         }
         }catch (error){
-            // xxxx
+            
         }
     };
 
