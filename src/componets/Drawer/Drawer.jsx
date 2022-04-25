@@ -49,7 +49,7 @@ function Drawer({onClose, onRemove, items =[] }){
                               <p>{obj.title}</p>
                               <b>{obj.price} руб.</b>
                           </div>
-                          <img onClick={() => onRemove(obj.id)} className='removeBtn' width={32} height={32} src='/img/btn-remove.svg' alt='Remove'/>
+                          <img onClick={() => onRemove(obj.id)} className='removeBtn' width={32} height={32} src= '/img/btn-remove.svg' alt='Remove'/>
                       </div>
                   ))}
               </div>
