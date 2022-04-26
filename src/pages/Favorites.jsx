@@ -5,13 +5,11 @@ import AppContext from "../componets/context";
 function Favorites() {
 
     const {favorites, onAddToFavorite} = React.useContext(AppContext);
-
-    return(
+    return (
         <div className='content'>
             <div className='search-block'>
-               <h1>Мои закладки</h1>
-             </div>
-
+                <h1>Мои закладки</h1>
+            </div>
 
             <div className='sneakers'>
                 {favorites
@@ -24,7 +22,6 @@ function Favorites() {
                         />
                     ))}
             </div>
-
         </div>
     );
 }

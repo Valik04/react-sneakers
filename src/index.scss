@@ -5,10 +5,6 @@ ol[class] {
   margin: 0;
 }
 
-
-
-
-
 body {
   margin: 0;
   font-family:'Inter', system-ui;
@@ -19,7 +15,6 @@ body {
     color: black;
   }
 }
-
 
 .wrapper{
   max-width: 1080px;
@@ -76,8 +71,6 @@ header{
   }
 }
 
-
-
 .content{
   padding: 40px;
 
@@ -115,8 +108,6 @@ header{
     }
   }
 
-
-
   .sneakers{
     display: flex;
     flex-wrap: wrap;
@@ -128,11 +119,7 @@ header{
     display: block;
     margin: 0 auto;
   }
-
-
-
 }
-
 
 .overlay{
   position: absolute;
@@ -142,8 +129,6 @@ header{
   height: 100%;
   background-color: rgba(0,0,0,0.1);
   z-index: 1;
-
-
 
   .drawer{
     right: 0;
@@ -163,9 +148,6 @@ header{
       flex-direction: column;
       text-align: center;
       flex: 1;
-
-
-
 
       .greenButton{
         margin-top: 20px;
@@ -204,8 +186,6 @@ header{
     .items{
       flex: 1;
 
-
-
       .cartItem{
         display: flex;
         align-items: center;
@@ -225,9 +205,8 @@ header{
           b{
             font-size: 14px;
           }
-
-
         }
+
         img{
           padding: 10px;
         }
@@ -240,7 +219,6 @@ header{
             opacity: 1;
           }
         }
-
       }
     }
     .cartTotalBlock{
@@ -281,7 +259,6 @@ header{
         cursor: default ;
       }
 
-
       &:hover{
         background: lighten(#9DD558, 7%);
       }
@@ -289,7 +266,6 @@ header{
       &:active{
         background: darken(#9DD558,5%);
       }
-
 
       &:hover{
         img{
@@ -305,9 +281,6 @@ header{
 
       }
     }
-
-
-
   }
 }
 

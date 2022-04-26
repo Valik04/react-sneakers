@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Orders from "./pages/Orders";
 
-
 function App() {
     const [items, setItems] = React.useState([]);
     const [cartItems, setCartItems] = React.useState([]);
@@ -28,9 +27,7 @@ function App() {
             setCartItems(cartResponse.data);
             setFavorites(favoritesResponse.data);
             setItems(itemsResponse.data);
-
         }
-
         fetchData();
     }, []);
 
@@ -92,15 +89,15 @@ function App() {
                          onAddToFavorite={onAddToFavorite}
                          onAddToCart={onAddToCart}
                          isLoading={isLoading}/>
-                 }
+                         }
             />
         </Routes>
 
         <Routes>
             <Route exact path='/favorites'
-                 element={
-                     <Favorites/>
-                 }
+                   element={
+                       <Favorites/>
+                   }
             />
         </Routes>
 

@@ -1,7 +1,6 @@
 import Card from "../componets/Card/Card";
 import React from "react";
 
-
 function Home({
                   items,
                   setSearchValue,
@@ -10,8 +9,7 @@ function Home({
                   onAddToCart,
                   onAddToFavorite,
                   isLoading,
-}) {
-
+              }) {
 
    const renderItems = () =>{
 const filtredItems =  items.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()),);
